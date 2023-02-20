@@ -1,5 +1,6 @@
-import logo from './logo.svg';
 import './App.css';
+import logo from './logo.svg';
+import {useState} from 'react'
 const products=[
 {
   "index": 0,
@@ -68,24 +69,12 @@ const products=[
   }
  ]
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [filter, setFilter] = useState("All");
+  const filterOptions = ["All", "Beer", "Wine","Spirits","Cider"];
+  const filteredProducts = filter === "All" ? products : products.filter((p) => p.type === filter);
+  return 
+    
+  
 }
 
 export default App;
