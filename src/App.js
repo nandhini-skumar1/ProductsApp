@@ -5,7 +5,7 @@ const products=[
   "index": 0,
   "isSale": false,
   "price": "$49.99",
-  "productImage": "Product_1.png",
+  "productImage": "Product_1.jpeg",
   "productName": "Pure Blonde Crate",
   "type": "Beer"
   },
@@ -86,7 +86,9 @@ function App() {
       <div>
           {filteredProducts.map((product) => (
             <div key={product.id}>
-              <img src></img>
+              {console.log(product.productImage)}
+              {/* <img src={`pics/${product.productImage}`}></img> */}
+              <img src={`./pics/${product.productImage}`}/>
               <h2>{product.productName}</h2>
               <p>{product.price}</p>
             </div>
