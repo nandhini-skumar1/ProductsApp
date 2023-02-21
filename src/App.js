@@ -1,5 +1,4 @@
 import './App.css';
-import logo from './logo.svg';
 import {useState} from 'react'
 const products=[
 {
@@ -74,13 +73,15 @@ function App() {
   const filteredProducts = filter === "All" ? products : products.filter((p) => p.type === filter);
   return (
     <div>
-      <div>
-        Filter:
-        {filterOptions.map((option) => (
-          <button key={option} onClick={() => setFilter(option)}>
-            {option}
-          </button>
-        ))}
+      <div className="filter">
+        Filter by 
+        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+          {filterOptions.map((option) => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
       </div>
       <div>
         {filteredProducts.map((product) => (
@@ -88,7 +89,6 @@ function App() {
             <img src></img>
             <h2>{product.name}</h2>
             <p>{product.price}</p>
-            <p>{product.description}</p>
           </div>
         ))}
       </div>
