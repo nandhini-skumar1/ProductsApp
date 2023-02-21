@@ -5,7 +5,7 @@ const products=[
   "index": 0,
   "isSale": false,
   "price": "$49.99",
-  "productImage": "Product_1.jpeg",
+  "productImage": "Product_1.png",
   "productName": "Pure Blonde Crate",
   "type": "Beer"
   },
@@ -72,7 +72,7 @@ function App() {
   const filterOptions = ["All", "Beer", "Wine","Spirits","Cider"];
   const filteredProducts = filter === "All" ? products : products.filter((p) => p.type === filter);
   return (
-    <div>
+    <div>     
       <div className="filter">
         Filter by 
         <select value={filter} onChange={(e) => setFilter(e.target.value)}>
@@ -84,15 +84,15 @@ function App() {
         </select>
       </div>
       <div>
-        {filteredProducts.map((product) => (
-          <div key={product.id}>
-            <img src></img>
-            <h2>{product.name}</h2>
-            <p>{product.price}</p>
-          </div>
-        ))}
+          {filteredProducts.map((product) => (
+            <div key={product.id}>
+              <img src></img>
+              <h2>{product.productName}</h2>
+              <p>{product.price}</p>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
   );
     
   
