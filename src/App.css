@@ -45,3 +45,15 @@
     border: 2px solid forestgreen;
     }
     
+.head-text {
+      position: relative;
+  }
+
+.text-on-image {
+     position: absolute;
+     right: 50%;
+     left: 20%;
+     bottom: 15%;
+     color:crimson;
+     transform: rotate(-20deg);
+   }

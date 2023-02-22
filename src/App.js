@@ -86,18 +86,38 @@ function App() {
       <div>
       <div id="img-wrapper">
           {filteredProducts.map((product) => (
+
+            product.isSale === true ?
+             
              <div id="boxit">
               <div  key={product.id}>
                 {console.log(product.productImage)}
-                {/* <img src={`pics/${product.productImage}`}></img> */}
-
-
-                <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
-
+                <div className = "head-text">
+                  <div className = "head-image">
+                      <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
+                  </div>
+                  <div class='text-on-image'><h3> ON SALE </h3></div> 
+                </div>
                 <h3>{product.productName}</h3>
                 <p>{product.price}</p>
               </div>
             </div>
+
+            :
+
+            <div id="boxit">
+              <div  key={product.id}>
+                {console.log(product.productImage)}
+                <div className = "head-text">
+                  <div className = "head-image">
+                      <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
+                  </div>
+                </div>
+                <h3>{product.productName}</h3>
+                <p>{product.price}</p>
+              </div>
+            </div>
+
             
           ))}
           </div>
