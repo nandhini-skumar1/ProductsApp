@@ -84,15 +84,23 @@ function App() {
         </select>
       </div>
       <div>
+      <div id="img-wrapper">
           {filteredProducts.map((product) => (
-            <div key={product.id}>
-              {console.log(product.productImage)}
-              {/* <img src={`pics/${product.productImage}`}></img> */}
-              <img src={`./pics/${product.productImage}`}/>
-              <h2>{product.productName}</h2>
-              <p>{product.price}</p>
+             <div id="boxit">
+              <div  key={product.id}>
+                {console.log(product.productImage)}
+                {/* <img src={`pics/${product.productImage}`}></img> */}
+
+
+                <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
+
+                <h3>{product.productName}</h3>
+                <p>{product.price}</p>
+              </div>
             </div>
+            
           ))}
+          </div>
         </div>
       </div>
   );

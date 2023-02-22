@@ -30,5 +30,18 @@
   color: #61dafb;
 }
 
+#img-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+ }
+ 
+ #img-wrapper > div {
+  flex: 0 1 33%;
+ }
 
 
+  #boxit > div {
+    text-align: center;
+    border: 2px solid forestgreen;
+    }
+    
