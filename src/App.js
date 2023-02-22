@@ -108,11 +108,7 @@ function App() {
             <div id="boxit">
               <div  key={product.id}>
                 {console.log(product.productImage)}
-                <div className = "head-text">
-                  <div className = "head-image">
-                      <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
-                  </div>
-                </div>
+                      <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>                  
                 <h3>{product.productName}</h3>
                 <p>{product.price}</p>
               </div>
