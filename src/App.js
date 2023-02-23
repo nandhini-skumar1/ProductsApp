@@ -126,6 +126,7 @@ function App() {
       <td width="30%">
       </td>
       <table align="center" width="95%"> 
+      <tbody>
         <tr> 
            <td align="center">Products Search 
            
@@ -152,6 +153,7 @@ function App() {
           </td>
 
         </tr>
+      </tbody>
       </table>
 
       <br></br>
@@ -167,7 +169,7 @@ function App() {
                   <div className = "head-image">
                       <img src={`./pics/${product.productImage}`} alt="drinks" width="100" height="100"/>
                   </div>
-                  <div class='text-on-image'><h3> ON SALE </h3></div> 
+                  <div className='text-on-image'><h3> ON SALE </h3></div> 
                 </div>
                 <h3>{product.productName}</h3>
                 <p>{product.price}</p>

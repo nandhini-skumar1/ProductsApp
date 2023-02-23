@@ -1,70 +1,100 @@
-# Getting Started with Create React App
+# Sample Web Store Application using React JS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a simple web application written in ReactJS framework featuring the following:
 
-## Available Scripts
+***display images in a grid***
 
-In the project directory, you can run:
+***select images by type***
 
-### `npm start`
+***select images by free text search***
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+***overlay label on some of the images***
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+***testing correctness of display DOM***
 
-### `npm test`
+## Sample Screenshot 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![UI screenshot][def]
 
-### `npm run build`
+## How to Setup ?
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Install [NodeJS](https://nodejs.org/en/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Install [git](https://git-scm.com/download/win)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Get source from GitHub
 
-### `npm run eject`
+`git clone  https://github.com/nandhini-skumar1/ProductApp`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+`cd ProductApp`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+`npm install`       <-- first time only 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## How to Run ?
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+`npm start`
 
-## Learn More
+ This will open the application in the default browser and you will see the final version. ( See below how to review older versions)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## How to Test ? 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+`npm test`
 
-### Code Splitting
+This will load the DOM into react test framework and probe for items.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Currently there are test to verify a screen text and verify image count
 
-### Analyzing the Bundle Size
+# How to review 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+***Assuming you have already started the npm application and currently viewing it in the browser*** 
 
-### Making a Progressive Web App
+Open another command window and move to the ProductApp folder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+`cd ProductApp`
 
-### Advanced Configuration
+`git checkout V1`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+***The browser will refresh to early version that has a badly formatted list of products AND type selection box***
 
-### Deployment
+`git checkout V2`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+***You will now see some images rather too big ones***
 
-### `npm run build` fails to minify
+`git checkout V3`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+***You will now see images in a grid***
+
+`git checkout V4`
+
+***You will ON SALE tags on some***
+
+`git checkout V5`
+
+***You will see free text selection box***
+
+`git checkout V6`
+
+***Final version. More items. Pretty layout. Nice?***
+
+# How to Use ? 
+
+When the application starts, it will display all the prodcuts.
+
+### Dropdown box on the top right
+
+selects type { Beer, Wine , Sprits, Cider }
+
+### Free text search box at top center
+
+Type any text. Items matching the typed text will be displayed. For example, type just the letter a and all the names haveing letter a will be displayed
+
+### Bonus
+
+selection by type and selection by partial text match are simultaniousy active. 
+
+Type = beer and text = ml will select all beers that has ml in its name.
+
+To reset all selections, select type=All and clear text selection box
+
+
+[def]: ./public/ui.jpg?raw=true "Sample User Interface"
