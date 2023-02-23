@@ -65,6 +65,46 @@ const products=[
   "productImage": "Product_8.jpeg",
   "productName": "Scrumpy RBerry 6x1.25L",
   "type": "Cider"
+  },
+  {
+  "index": 8,
+  "isSale": true,
+  "price": "$55.99",
+  "productImage": "Product_9.jpg",
+  "productName": "Carlton Draught 4x6x330ml",
+  "type": "Beer"
+  },
+  {
+  "index": 9,
+  "isSale": false,
+  "price": "$48.99",
+  "productImage": "Product_10.jpg",
+  "productName": "Mercury Draught 375 ml",
+      "type": "Cider"
+  },
+  {
+  "index": 10,
+  "isSale": false,
+  "price": "$45.95",
+  "productImage": "Product_11.jpg",
+  "productName": "Smirnoff Red Label Vodka 1.125 L",
+  "type": "Spirits"
+  },
+  {
+  "index": 11,
+  "isSale": false,
+  "price": "$45.95",
+  "productImage": "Product_12.jpeg",
+  "productName": "Captain Morgan Original Spiced Gold 700ml",
+  "type": "Spirits"
+  },
+  {
+  "index": 12,
+  "isSale": false,
+  "price": "$45.95",
+  "productImage": "Product_13.jpg",
+  "productName": "Somersby Apple Cider 375ml (Case of 30 Cans)",
+  "type": "Cider"
   }
  ]
 function App() {
@@ -82,12 +122,23 @@ function App() {
     <div>     
 
 
-      <h1 align="center"> Nandhini's Fine Sprits Online</h1>
-
-      <table align="center"> 
+      <h1 align="center"> Nandhini's Fine Sprits </h1>
+      <td width="30%">
+      </td>
+      <table align="center" width="95%"> 
         <tr> 
-
-          <tc>
+           <td align="center">Products Search 
+           
+           <input
+                type="text"
+                placeholder="  Search by product name  "
+                value={searchText}
+                onChange={(event) => setSearchText(event.target.value)}
+              />
+            </td>
+        </tr>
+          <tr>                 
+           <td align="right" width="37%">
               <div className="filter">
                 Filter by Type : 
                 <select value={filter} onChange={(e) => setFilter(e.target.value)}>
@@ -98,22 +149,12 @@ function App() {
                   ))}
                 </select>
               </div> 
-          </tc>
-
-           <tc> Free Text Search of Products:  </tc> 
-           <tc> 
-           <input
-                type="text"
-                placeholder="Search by product name"
-                value={searchText}
-                onChange={(event) => setSearchText(event.target.value)}
-              />
-           </tc>
+          </td>
 
         </tr>
       </table>
 
-    
+      <br></br>
       <div id="img-wrapper">
           {filteredProducts.map((product) => (
 
