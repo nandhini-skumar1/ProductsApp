@@ -70,20 +70,50 @@ const products=[
 function App() {
   const [filter, setFilter] = useState("All");
   const filterOptions = ["All", "Beer", "Wine","Spirits","Cider"];
-  const filteredProducts = filter === "All" ? products : products.filter((p) => p.type === filter);
+  const filteredProductsByType = filter === "All" ? products : products.filter((p) => p.type === filter);
+
+  const [searchText, setSearchText] = useState("");
+
+  const filteredProducts = filteredProductsByType.filter((product) =>
+    product.productName.toLowerCase().includes(searchText.toLowerCase())
+  );
+
   return (
     <div>     
-      <div className="filter">
-        Filter by 
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
-          {filterOptions.map((option) => (
-            <option key={option} value={option}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </div>
-      <div>
+
+
+      <h1 align="center"> Nandhini's Fine Sprits Online</h1>
+
+      <table align="center"> 
+        <tr> 
+
+          <tc>
+              <div className="filter">
+                Filter by Type : 
+                <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+                  {filterOptions.map((option) => (
+                    <option key={option} value={option}>
+                      {option}
+                    </option>
+                  ))}
+                </select>
+              </div> 
+          </tc>
+
+           <tc> Free Text Search of Products:  </tc> 
+           <tc> 
+           <input
+                type="text"
+                placeholder="Search by product name"
+                value={searchText}
+                onChange={(event) => setSearchText(event.target.value)}
+              />
+           </tc>
+
+        </tr>
+      </table>
+
+    
       <div id="img-wrapper">
           {filteredProducts.map((product) => (
 
@@ -118,7 +148,7 @@ function App() {
           ))}
           </div>
         </div>
-      </div>
+
   );
     
   

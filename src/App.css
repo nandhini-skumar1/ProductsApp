@@ -52,7 +52,7 @@
 .text-on-image {
      position: absolute;
      right: 50%;
-     left: 20%;
+     left: 10%;
      bottom: 15%;
      color:crimson;
      transform: rotate(-20deg);
